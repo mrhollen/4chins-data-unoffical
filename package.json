@@ -4,9 +4,11 @@
   "description": "",
   "main": "dist/App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"setup": "npm install",
+	"build": "tsc",
+	"build-watch": "tsc --watch"
   },
-  "author": "",
+  "author": "Hollen Graver",
   "license": "UNLICENSED",
   "dependencies": {
     "@types/node": "^11.11.3",
@@ -15,4 +17,4 @@
   "devDependencies": {
     "typed-rest-client": "^1.1.2"
   }
-}
+

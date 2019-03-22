@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const rm = require("typed-rest-client/RestClient");
+const https = require("https");
 class FourChanApi {
     constructor() {
         this.baseUrl = 'https://a.4cdn.org/';
@@ -36,8 +37,16 @@ class FourChanApi {
     }
     downloadFile(board, filename) {
         return __awaiter(this, void 0, void 0, function* () {
-            let response = yield this.images.get(`${board}/${filename}`);
-            return this.returnIfSuccess(response);
+            return new Promise((resolve, reject) => {
+                https.get(`${this.imageUrl}/${board}/${filename}`, response => {
+                    if (response.statusCode == 200) {
+                        resolve(response);
+                    }
+                    else {
+                        reject(response);
+                    }
+                });
+            });
         });
     }
     returnIfSuccess(response) {

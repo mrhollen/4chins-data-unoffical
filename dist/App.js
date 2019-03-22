@@ -16,7 +16,7 @@ let files = new FileHelper_1.FileHelper();
 const main = () => __awaiter(this, void 0, void 0, function* () {
     let boardCollection = yield api.getBoards();
     let fit = boardCollection.boards.filter(board => {
-        return board.board === 'hm';
+        return board.board === 'fit';
     })[0];
     let catalogs = yield api.getCatalog(fit.board);
     catalogs.forEach(catalog => {
