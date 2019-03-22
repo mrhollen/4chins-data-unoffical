@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/App.js",
   "scripts": {
-	"setup": "npm install",
-	"build": "tsc",
-	"build-watch": "tsc --watch"
+    "setup": "npm install",
+    "build": "tsc",
+    "build-watch": "tsc --watch"
   },
   "author": "Hollen Graver",
   "license": "UNLICENSED",
@@ -17,4 +17,5 @@
   "devDependencies": {
     "typed-rest-client": "^1.1.2"
   }
+}
 
