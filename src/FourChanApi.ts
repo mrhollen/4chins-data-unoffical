@@ -34,10 +34,9 @@ export class FourChanApi {
     }
 
     async downloadFile(board: string, filename: string): Promise<any> {
-
         return new Promise<any>((resolve, reject) => {
             https.get(`${this.imageUrl}/${board}/${filename}`, response => {
-                if(response.statusCode == 200){
+                if(response.statusCode === 200){
                     resolve(response);
                 }else {
                     reject(response);
@@ -47,7 +46,7 @@ export class FourChanApi {
     }
 
     private returnIfSuccess<T>(response: rm.IRestResponse<T>): T {
-        if(response.statusCode == 200){
+        if(response.statusCode === 200){
             return response.result;
         }else {
             console.log("Error Fetching Data");

@@ -1,5 +1,4 @@
 import { FourChanApi } from './FourChanApi';
-import { IBoard } from './Models/IBoard';
 import { FileHelper } from './FileHelper';
 import * as fs from 'fs';
 let api = new FourChanApi();
